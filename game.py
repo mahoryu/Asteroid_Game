@@ -1,3 +1,5 @@
+# /game.py
+
 import pygame, sys
 from pygame.locals import *
 from pygame import draw
