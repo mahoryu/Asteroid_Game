@@ -4,17 +4,20 @@ class Velocity():
     an object is moving.
     """
     def __init__(self, dX, dY):
-        self.dX = dX
-        self.dY = dY
+        self._dX = dX
+        self._dY = dY
 
     def getDx(self):
-        return self.dX
+        return self._dX
 
     def getDy(self):
-        return self.dY
+        return self._dY
 
     def setDx(self, dX):
-        self.dX = dX
+        self._dX = dX
 
     def setDy(self, dY):
-        self.dY = dY
+        self._dY = dY
+
+    dX = property(getDx, setDx)
+    dY = property(getDy, setDy)
