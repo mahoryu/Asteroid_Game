@@ -5,11 +5,10 @@ class Point():
     def __init__(self, x, y):
         self.x = x
         self.y = y
-
     def get_x(self):
-        return x
+        return self.x
     def get_y(self):
-        return y
+        return self.y
     def set_x(self, x):
         self.x = x
     def set_y(self, y):
