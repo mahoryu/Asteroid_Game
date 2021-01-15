@@ -3,6 +3,7 @@
 import pygame, sys
 from pygame.locals import *
 from pygame import draw
+from flyingObject import FlyingObject
 
 # initialize the program
 pygame.init()
@@ -18,6 +19,10 @@ GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
+# set object images
+char = pygame.image.load("/home/tech_chef/Projects/Asteroid_Game/Images/ship.png")
+bg = pygame.image.load("/home/tech_chef/Projects/Asteroid_Game/Images/stars_bg.jpg")
+
 # Set a display size constant
 HIGHT = 800
 WIDTH = 800
@@ -27,21 +32,24 @@ DISPLAYSURF = pygame.display.set_mode((WIDTH,HIGHT))
 DISPLAYSURF.fill(WHITE)
 pygame.display.set_caption("Testing the Evironment")
 
-# Create Lines and Shapes
-draw.line(DISPLAYSURF, BLUE, (150,130), (130,170))
-draw.line(DISPLAYSURF, BLUE, (150,130), (170,170))
-draw.line(DISPLAYSURF, GREEN, (130,170), (170,170))
-draw.circle(DISPLAYSURF, BLACK, (100,50), 30)
-draw.circle(DISPLAYSURF, BLACK, (200,50), 30)
-draw.rect(DISPLAYSURF, RED, (100, 200, 100, 50), 2)
-draw.rect(DISPLAYSURF, BLACK, (110, 260, 80, 5))
+
+def redrawGameWindow():
+    DISPLAYSURF.blit(bg, (0,0))
+    ship.draw(DISPLAYSURF, char)
+
+    pygame.display.update()
 
 # Game loop
+ship = FlyingObject()
 while True:
     pygame.display.update()
     for envent in pygame.event.get():
         if envent.type == QUIT:
             pygame.quit()
             sys.exit()
+
+    ship.advance()
+
+    redrawGameWindow()
 
     FramePerSec.tick(FPS)

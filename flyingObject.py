@@ -1,6 +1,5 @@
 from point import Point
 from velocity import Velocity
-from game import HIGHT, WIDTH
 
 class FlyingObject():
     """
@@ -51,8 +50,13 @@ class FlyingObject():
     angle = property(getAngle,setAngle)
     radius = property(getRadius, setRadius)
 
+    def draw(self, win, char):
+        win.blit(char, (self.point.x,self.point.y))
+
     def wrap(self):
+        #TODO
         pass
 
     def advance(self):
-        pass
+        self.point.x += self.velocity.dX
+        self.point.y += self.velocity.dY

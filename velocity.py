@@ -3,7 +3,7 @@ class Velocity():
     Velocity class to mesure the rate of speed at which
     an object is moving.
     """
-    def __init__(self, dX=0, dY=0):
+    def __init__(self, dX=1, dY=1):
         self._dX = dX
         self._dY = dY
 
