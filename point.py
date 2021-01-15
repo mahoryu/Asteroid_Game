@@ -2,24 +2,27 @@ class Point():
     """
     A point object containing an x and y coordinate
     """
-    def __init__(self, x, y):
+    def __init__(self, x=0, y=0):
         self._x = x
         self._y = y
 
     def __str__(self):
         return f"({self._x},{self._y})"
 
-    def get_x(self):
+    # Getters
+    def getX(self):
         return self._x
 
-    def get_y(self):
+    def getY(self):
         return self._y
 
-    def set_x(self, x):
+    # Setters
+    def setX(self, x):
         self._x = x
 
-    def set_y(self, y):
+    def setY(self, y):
         self._y = y
 
-    y = property(get_y, set_y)
-    x = property(get_x, set_x)
+    # Properties
+    y = property(getY, setY)
+    x = property(getX, setX)

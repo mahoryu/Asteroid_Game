@@ -18,8 +18,12 @@ GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
+# Set a display size constant
+HIGHT = 800
+WIDTH = 800
+
 # setup a 300x300 pixel display with caption
-DISPLAYSURF = pygame.display.set_mode((300,300))
+DISPLAYSURF = pygame.display.set_mode((WIDTH,HIGHT))
 DISPLAYSURF.fill(WHITE)
 pygame.display.set_caption("Testing the Evironment")
 
