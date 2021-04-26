@@ -3,6 +3,7 @@
 import pygame, sys
 from pygame.locals import *
 from pygame import draw
+import os
 from flyingObject import FlyingObject
 
 # initialize the program
@@ -20,8 +21,9 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
 # set object images
-char = pygame.image.load("/home/tech_chef/Projects/Asteroid_Game/Images/ship.png")
-bg = pygame.image.load("/home/tech_chef/Projects/Asteroid_Game/Images/stars_bg.jpg")
+CWD = os.getcwd()
+char = pygame.image.load(CWD + "/Images/ship.png")
+bg = pygame.image.load(CWD + "/Images/stars_bg.jpg")
 
 # Set a display size constant
 HIGHT = 800
